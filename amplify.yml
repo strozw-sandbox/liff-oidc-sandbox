@@ -3,6 +3,7 @@ backend:
     phases:
         build:
             commands:
+                - echo "NEXT_PUBLIC_LIFF_ID=$NEXT_PUBLIC_LIFF_ID" >> .env
                 - 'nvm use 20'
                 - 'corepack enable'
                 - 'npm ci'
