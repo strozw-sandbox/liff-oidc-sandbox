@@ -1,13 +1,15 @@
 import { defineAuth, secret } from "@aws-amplify/backend";
 
+const liffUrl = String(process.env.LIFF_URL ?? "https://localhost:3000");
+
 export const auth = defineAuth({
 	loginWith: {
 		email: true,
 		externalProviders: {
 			// ログイン後のリダイレクト先
-			callbackUrls: ["https://localhost:3000"],
+			callbackUrls: [liffUrl],
 			// ログアウト後のリダイレクト先
-			logoutUrls: ["https://localhost:3000/logouted"],
+			logoutUrls: [`${liffUrl}/logouted`],
 			oidc: [
 				{
 					name: "LINE",
