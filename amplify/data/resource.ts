@@ -24,7 +24,7 @@ export const data = defineData({
 		oidcAuthorizationMode: {
 			oidcProviderName: "line-login",
 			oidcIssuerUrl: "https://access.line.me",
-			// clientId: '',
+			clientId: "client_id",
 			tokenExpiryFromAuthInSeconds: 300,
 			tokenExpireFromIssueInSeconds: 600,
 		},
