@@ -18,9 +18,7 @@ export default function LiffLayout({ children }: PropsWithChildren) {
 				setLiffObject(liff);
 
 				if (!liff.isLoggedIn()) {
-					liff.login({
-						redirectUri: "/setup",
-					});
+					liff.login();
 				}
 			},
 			(error) => () => {
