@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LIFF Sandobox
 
-## Getting Started
+LIFF App で OIDC を利用するための実験をおこなうための環境
 
-First, run the development server:
+※ 現時点では、LIFF でログイン後、Amplify Data での OIDC の認証を利用した CRUD ができていない
+
+## 必要なもの
+
+### LINE 関連
+
+- LINE ログインチャネル
+- LINE ログインチャネルでの LIFF アプリの追加
+
+### Amplify Console で設定が必要なもの
+
+#### 環境変数
+
+| 変数名              | 内容                 |
+| ------------------- | -------------------- |
+| LIFF_URL            | 作成した LIFF の URL |
+| NEXT_PUBLIC_LIFF_ID | 作成した LIFF の ID  |
+
+#### シークレット
+
+| 変数名              | 内容                                         |
+| ------------------- | -------------------------------------------- |
+| LINE_CHANNEL_ID     | 作成した LINE ログインチャネルの ID          |
+| LINE_CHANNEL_SECRET | 作成した LINE ログインチャネルのシークレット |
+
+## 開発
+
+### パッケージインストール
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Amplify のリソースの検証
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+sandobox が作成できるかを検証する
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### 必要なシークレットの設定
 
-## Learn More
+```bash
+npx ampx sandbox secret LINE_CHANNEL_ID --profile "YOUR_AWS_PROFILE"
+npx ampx sandbox secret LINE_CHANNEL_SECRET --profile "YOUR_AWS_PROFILE"
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### sandbox の立ち上げ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx ampx sandbox --profile "YOUR_AWS_PROFILE"
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### ビルドの検証
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 開発サーバーの起動
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+※ 現時点では、Amplify に Deploy して検証しているため、明確な開発方法を提示できない。
+
+> TODO
