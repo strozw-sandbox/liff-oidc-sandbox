@@ -11,6 +11,9 @@ LIFF App で OIDC を利用するための実験をおこなうための環境
 [LINE Developer Console](https://developers.line.biz/console/) にて、以下のものを用意する
 
 - LINE ログインチャネル
+- LINE ログインチャネルでの OIDC の有効化
+  - 有効にする際のスクリーンショットは、本アプリケーションのプライバシーポリシーのスクリーンショットを利用
+    - `http://localhost:3000/privacy`
 - LINE ログインチャネルでの LIFF アプリの追加
 
 ### Amplify Console で設定が必要なもの
