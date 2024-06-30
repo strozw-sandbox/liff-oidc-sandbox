@@ -8,10 +8,14 @@ LIFF App で OIDC を利用するための実験をおこなうための環境
 
 ### LINE 関連
 
+[LINE Developer Console](https://developers.line.biz/console/) にて、以下のものを用意する
+
 - LINE ログインチャネル
 - LINE ログインチャネルでの LIFF アプリの追加
 
 ### Amplify Console で設定が必要なもの
+
+リポジトリを接続した Amplify アプリ を接続し、用意した LINE ログインチャネルの情報を元に、以下を設定する
 
 #### 環境変数
 
