@@ -4,7 +4,7 @@ import { a, defineData } from "@aws-amplify/backend";
 const schema = a.schema({
 	Todo: a
 		.model({
-			title: a.string(),
+			content: a.string(),
 			isDone: a.boolean(),
 		})
 		.authorization((allow) => [
