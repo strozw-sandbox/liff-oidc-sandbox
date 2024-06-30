@@ -31,5 +31,5 @@ export default function LiffLayout() {
 		);
 	}, [liffObject]);
 
-	return <LiffContext.Provider value={liffObject}></LiffContext.Provider>;
+	return <LiffContext.Provider value={liffObject} />;
 }
