@@ -4,7 +4,6 @@ backend:
         build:
             commands:
                 - echo "NEXT_PUBLIC_LIFF_ID=$NEXT_PUBLIC_LIFF_ID" >> .env
-                - 'nvm use 20'
                 - 'corepack enable'
                 - 'npm ci'
                 - 'npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID'
