@@ -2,10 +2,10 @@ import type { ClientSchema } from "@aws-amplify/backend";
 import { a, defineData } from "@aws-amplify/backend";
 
 const schema = a.schema({
-	User: a
+	Todo: a
 		.model({
-			lineUserId: a.string(),
-			name: a.string(),
+			title: a.string(),
+			isDone: a.boolean(),
 		})
 		.authorization((allow) => [
 			allow.owner("oidc").identityClaim("user_id"),

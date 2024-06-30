@@ -1,10 +1,10 @@
 "use client";
 
 import liff from "@line/liff";
-import { useEffect, useState } from "react";
+import { type PropsWithChildren, useEffect, useState } from "react";
 import { LiffContext, type LiffContextValue } from "./liff-context";
 
-export default function LiffLayout() {
+export default function LiffLayout({ children }: PropsWithChildren) {
 	const [liffObject, setLiffObject] = useState<LiffContextValue>(null);
 
 	useEffect(() => {
@@ -31,5 +31,9 @@ export default function LiffLayout() {
 		);
 	}, [liffObject]);
 
-	return <LiffContext.Provider value={liffObject} />;
+	return (
+		<LiffContext.Provider value={liffObject}>
+			{liffObject?.isLoggedIn() ? children : "Liff App is initializing now..."}
+		</LiffContext.Provider>
+	);
 }

@@ -7,7 +7,7 @@ export const auth = defineAuth({
 		email: true,
 		externalProviders: {
 			// ログイン後のリダイレクト先
-			callbackUrls: [liffUrl],
+			callbackUrls: [`${liffUrl}/liff`],
 			// ログアウト後のリダイレクト先
 			logoutUrls: [`${liffUrl}/logouted`],
 			oidc: [
