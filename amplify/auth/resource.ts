@@ -6,9 +6,7 @@ export const auth = defineAuth({
 	loginWith: {
 		email: true,
 		externalProviders: {
-			// ログイン後のリダイレクト先
 			callbackUrls: [`${liffUrl}/liff`],
-			// ログアウト後のリダイレクト先
 			logoutUrls: [`${liffUrl}/logouted`],
 			oidc: [
 				{
@@ -23,9 +21,6 @@ export const auth = defineAuth({
 						userInfo: "https://api.line.me/v2/profile",
 						authorization: "https://access.line.me/oauth2/v2.1/authorize",
 					},
-					/**
-					 * 必要があれば記述
-					 */
 					attributeMapping: {},
 				},
 			],
@@ -34,8 +29,5 @@ export const auth = defineAuth({
 	multifactor: {
 		mode: "OFF",
 	},
-	/**
-	 * ユーザープールにカスタム属性を追加したい場合記述
-	 */
 	userAttributes: {},
 });

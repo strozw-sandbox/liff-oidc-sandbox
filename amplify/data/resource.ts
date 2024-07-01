@@ -8,7 +8,7 @@ const schema = a.schema({
 			isDone: a.boolean(),
 		})
 		.authorization((allow) => [
-			allow.owner("oidc").identityClaim("user_id"),
+			// allow.owner("oidc").identityClaim("user_id"),
 			allow.authenticated("oidc"),
 		]),
 });
